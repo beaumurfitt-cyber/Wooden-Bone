@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pathways=[
+['The Garden Reset','Overgrown, neglected gardens needing a serious tidy and reset.','Overgrowth, weeds, green waste and messy beds.','A garden that feels manageable again.','/yard-cleanups'],
+['Regular Garden Care','Busy households wanting reliable ongoing maintenance.','No time, recurring weeds, lawns slipping out of shape.','Steady upkeep and less weekend stress.','/garden-maintenance'],
+['Lawn, Edges & Turf','Homes needing cleaner lawn lines and stronger turf.','Patchy lawn, rough edges, thin grass.','Sharper presentation and usable lawn areas.','/irrigation-turf-edging'],
+['Irrigation & Summer Prep','Gardens that struggle in Adelaide heat.','Dry spots, leaks, poor coverage, wasted water.','Better watering and summer resilience.','/irrigation-turf-edging'],
+['Small Landscape Improvements','Practical upgrades without a large landscaping build.','Tired beds, weak layout, poor street appeal.','Low-maintenance, high-impact improvements.','/small-landscaping'],
+['Pre-Sale Garden Tidy','Property presentation for photos and inspections.','Overgrown frontage, messy beds, poor first impression.','Cleaner look for listing and handover.','/yard-cleanups']
+];
+---
+<BaseLayout title="Services | Wooden Bone Garden and Landscape" description="Practical garden and landscape help, without the runaround."><section class="section"><div class="container"><h1>Practical garden and landscape help, without the runaround.</h1><div class="cards">{pathways.map(p=><article class="card"><h2>{p[0]}</h2><p><strong>Who it’s for:</strong> {p[1]}</p><p><strong>Typical problems:</strong> {p[2]}</p><p><strong>Typical outcomes:</strong> {p[3]}</p><p><a href={p[4]}>Learn more</a> · <a data-track="service_page_cta_click" href="/request-job">Request a job</a></p></article>)}</div></div></section></BaseLayout>

@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const posts=['when-to-prepare-your-adelaide-garden-for-summer','how-to-recover-an-overgrown-garden-before-selling','best-low-maintenance-garden-improvements-for-adelaide-homes','autumn-garden-cleanup-checklist-for-adelaide-homeowners','how-much-does-a-garden-cleanup-cost-in-adelaide','when-should-you-fix-irrigation-before-an-adelaide-summer','simple-garden-edging-improvements-that-make-a-yard-look-finished','small-landscaping-jobs-that-improve-street-appeal'];
+---
+<BaseLayout title="Seasonal Garden Tips" description="Local Adelaide garden advice."><section class="section"><div class="container"><h1>Seasonal Garden Tips</h1><ul>{posts.map(p=><li><a href={`/blog/${p}`}>{p.replace(/-/g,' ')}</a></li>)}</ul></div></section></BaseLayout>

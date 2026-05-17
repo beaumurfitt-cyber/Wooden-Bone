@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Thank You | Wooden Bone Garden and Landscape" description="Thanks — your job request has been sent."><section class="section"><div class="container"><h1>Thanks — your job request has been sent.</h1><p>John will review the details and get back to you as soon as practical. If you have extra photos, send them through by SMS.</p><p><a class="btn btn-secondary" data-track="phone_click" href={`tel:${site.phone}`}>Call John</a> <a class="btn btn-secondary" data-track="sms_click" href={`sms:${site.sms}`}>SMS photos</a> <a class="btn btn-ghost" href="/services">Back to services</a></p></div></section></BaseLayout>
