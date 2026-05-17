@@ -1,39 +1,44 @@
-# Wooden Bone Garden and Landscape Website
+# Wooden Bone Garden and Landscape website
 
-Astro static-first lead generation website for Netlify + Cloudflare.
+Static-first Astro lead-generation website for Netlify + Cloudflare.
 
-## Run locally
-- `npm install`
-- `npm run dev`
-- `npm run build`
+## Local run
+1. `npm install`
+2. `npm run dev`
+3. `npm run build`
 
-## Deploy to Netlify
-1. Connect repo in Netlify.
-2. Build command: `npm run build`
-3. Publish directory: `dist`
-4. Enable Netlify Forms.
+## Netlify deployment
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Netlify Forms enabled for `/request-job`
 
-## Cloudflare custom domain
+## Cloudflare domain setup
 1. Add domain in Netlify.
-2. In Cloudflare DNS, point CNAME/records per Netlify instructions.
-3. Keep proxy enabled, SSL full/strict.
+2. Add DNS records in Cloudflare as instructed by Netlify.
+3. Use SSL Full (strict) and keep proxy enabled.
 
-## Forms
-- `/request-job` uses Netlify Forms (`data-netlify="true"`) with honeypot and file upload.
-- Form redirects to `/thank-you`.
+## Forms and guided quote flow
+- `/request-job` is a multi-step Netlify form with honeypot and photo uploads.
+- Events: `form_start`, `form_step_complete`, `photo_upload`, `form_submit`.
+- Success redirect: `/thank-you`.
 
-## Analytics placeholders
-- `src/components/TrackingScript.astro` contains event hooks for GA4/GTM/Ads/Meta integrations.
+## Update contact details
+- Edit `src/data/site.ts` for phone, SMS, email, ABN, insurance placeholders.
+
+## Update seasonal campaign block
+- Edit `seasonalCampaign` in `src/data/site.ts`.
 
 ## Add new suburbs
-- Edit `src/data/site.ts` `suburbs` array.
-- Dynamic routes generated at `/service-areas/[suburb]`.
+- Add suburb names to `suburbs` in `src/data/site.ts`.
+- Update `getStaticPaths` list in `src/pages/service-areas/[suburb]/index.astro` if publishing a localised page.
 
 ## Add gallery items
-- Edit `src/pages/before-after-gallery.astro` list and add images to `public/images/gallery/`.
+- Add images into `public/images/gallery/`.
+- Update `src/pages/before-after-gallery.astro` and homepage preview.
 
 ## Add blog posts
-- Add new page in `src/pages/blog/` and link from `src/pages/blog/index.astro`.
+- Create a page in `src/pages/blog/`.
+- Add link in `src/pages/blog/index.astro`.
 
 ## Placeholders to replace before launch
-- Phone, SMS, email, ABN, insurance/licensing, testimonials, logo, real project images.
+- Phone number, email, ABN, insurance/licensing, logo, John photo, testimonials, and real project images.
