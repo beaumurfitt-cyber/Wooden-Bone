@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Contact | Wooden Bone Garden and Landscape" description="Contact Wooden Bone."><section class="section"><div class="container"><h1>Contact</h1><p>Phone <a data-track="phone_click" href={`tel:${site.phone}`}>{site.phone}</a> · SMS <a data-track="sms_click" href={`sms:${site.sms}`}>{site.sms}</a> · Email {site.email}</p></div></section></BaseLayout>

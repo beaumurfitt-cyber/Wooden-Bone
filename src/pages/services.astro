@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const cards=['Garden maintenance','Yard cleanups','Lawn mowing and edging','Hedge trimming and pruning','Weeding and garden bed recovery','Irrigation fixes and improvements','Turf installation','Garden edging','New plantings','Small garden makeovers','Small landscaping','Pre-sale property garden tidy-ups','Green waste removal'];
+---
+<BaseLayout title="Services | Wooden Bone Garden and Landscape" description="Practical gardening and small landscaping services."><section class="section"><div class="container"><h1>Services</h1><div class="cards">{cards.map(c=><article class="card"><h2>{c}</h2><p>Who it is for, typical problems solved, and practical outcomes for Adelaide homes.</p><a href="/request-job" data-track="service_page_cta_click">Request a job</a></article>)}</div></div></section></BaseLayout>

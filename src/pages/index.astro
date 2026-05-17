@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { suburbs } from '../data/site';
+---
+<BaseLayout title="Wooden Bone Garden and Landscape | Local Gardener & Landscaper Bellevue Heights" description="Reliable garden and landscape help across Adelaide's southern suburbs.">
+<PageHero title="Reliable garden and landscape help for homes across Adelaide’s southern suburbs." subtitle="Garden cleanups, maintenance, planting, edging, irrigation, turf and small landscape improvements from a local Bellevue Heights operator." />
+<section class="section"><div class="container"><h2>Common garden problems we solve</h2><div class="cards">{['Overgrown yard','Messy garden beds','Tired lawn','Irrigation issues','Poor edging','Preparing for sale','Not enough time','Garden too much to manage','Outdoor areas needing a practical reset'].map(i=><article class="card"><h3>{i}</h3></article>)}</div></div></section>
+<section class="section"><div class="container"><h2>How it works</h2><ol><li>Tell us what you need</li><li>Send photos or book a visit</li><li>Get the job done properly</li></ol></div></section>
+<section class="section"><div class="container"><h2>See recent work</h2><p>Before and after gallery with placeholder examples until real project photos are added.</p><a href="/before-after-gallery">View gallery</a></div></section>
+<section class="section"><div class="container"><h2>Service areas</h2><p>{suburbs.join(', ')} and surrounding suburbs.</p></div></section>
+<section class="section"><div class="container"><h2>Testimonials</h2><div class="cards"><article class="card">Replace with real customer review.</article><article class="card">Replace with real customer review.</article></div></div></section>
+</BaseLayout>
