@@ -1,1 +1,8 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'><rect width='100%' height='100%' fill='#d8ccb4'/><text x='60' y='120' fill='#2f5d3a' font-size='42' font-family='Arial'>Placeholder image — replace with real before/after photos</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'>
+<defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='#5e7b66'/><stop offset='100%' stop-color='#243a2f'/></linearGradient></defs>
+<rect width='1600' height='900' fill='url(#g)'/>
+<path d='M0 620 Q300 520 600 600 T1200 580 T1600 610 V900 H0Z' fill='#3f5d48'/>
+<path d='M0 700 Q350 640 700 710 T1400 690 T1600 720 V900 H0Z' fill='#2f4a3a'/>
+<path d='M620 900 L790 560 L860 560 L700 900 Z' fill='#ccb99a'/>
+<text x='80' y='120' fill='#f2ebdf' font-family='Arial' font-size='52' font-weight='700'>Hero Placeholder — Replace with real garden/foothills photography</text>
+</svg>
