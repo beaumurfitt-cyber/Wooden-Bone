@@ -1,0 +1,11 @@
+<script is:inline>
+window.dataLayer = window.dataLayer || [];
+window.wbgTrack = (event, detail = {}) => {
+  window.dataLayer.push({ event, ...detail });
+  if (window.gtag) window.gtag('event', event, detail);
+};
+document.addEventListener('click', (e) => {
+  const el = e.target.closest('[data-track]');
+  if (el) window.wbgTrack(el.dataset.track, { label: el.dataset.label || '' });
+});
+</script>

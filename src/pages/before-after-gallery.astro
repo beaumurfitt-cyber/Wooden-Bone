@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const items=[1,2,3];
+---
+<BaseLayout title="Before and After Gallery" description="Recent garden transformations."><section class="section"><div class="container"><h1>Before and After Gallery</h1><div class="cards">{items.map(i=><article class="card"><img src="/images/gallery/placeholder.svg" alt="Placeholder before and after"/><p>Suburb: Placeholder · Job type: Placeholder · Replace with real project images.</p><a href="/request-job" data-track="gallery_cta_click">Request similar help</a></article>)}</div></div></section></BaseLayout>
