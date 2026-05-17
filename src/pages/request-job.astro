@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Request a Gardening or Landscaping Job | Wooden Bone Garden and Landscape Adelaide" description="Tell John what needs sorting.">
+<section class="section"><div class="container"><h1>Tell John what needs sorting.</h1><p>Send a few details and photos so John can suggest the best next step.</p><p><a href={`tel:${site.phone}`} data-track="phone_click">Call John</a> · <a href={`sms:${site.sms}`} data-track="sms_click">SMS John</a> · For urgent jobs, calling or texting may be faster.</p>
+<div class="form-wrap"><div class="prog" aria-label="Form progress"><i id="bar" style="width:20%"></i></div>
+<form name="request-job" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" enctype="multipart/form-data" data-track-submit>
+<input type="hidden" name="form-name" value="request-job"/><p hidden><label>Don’t fill this out: <input name="bot-field"/></label></p>
+<div class="step active" data-step="1"><h2>Step 1 · What needs doing?</h2>{['Garden cleanup','Regular maintenance','Lawn and edges','Weeding','Irrigation','Turf','Planting','Small landscaping','Pre-sale tidy-up','Not sure'].map(i=><label><input type="checkbox" name="needs" value={i}/> {i}</label>)}<button type="button" class="btn btn-primary next">Next</button></div>
+<div class="step" data-step="2"><h2>Step 2 · How big is the job?</h2><select name="size" required><option>Small tidy-up</option><option>Half-day</option><option>Full-day</option><option>Multi-day</option><option>Not sure</option></select><button type="button" class="btn btn-ghost prev">Back</button> <button type="button" class="btn btn-primary next">Next</button></div>
+<div class="step" data-step="3"><h2>Step 3 · Where are you?</h2><label>Suburb<input name="suburb" required/></label><label>Address (optional)<input name="address"/></label><button type="button" class="btn btn-ghost prev">Back</button> <button type="button" class="btn btn-primary next">Next</button></div>
+<div class="step" data-step="4"><h2>Step 4 · Show the garden</h2><p>Photos help John understand the job before visiting.</p><label>Upload photos<input type="file" name="photos" multiple onchange="window.wbgTrack&&window.wbgTrack('photo_upload')"/></label><label>Job details<textarea name="description"></textarea></label><button type="button" class="btn btn-ghost prev">Back</button> <button type="button" class="btn btn-primary next">Next</button></div>
+<div class="step" data-step="5"><h2>Step 5 · Contact details</h2><label>Name<input name="name" required/></label><label>Mobile<input name="mobile" required/></label><label>Email<input type="email" name="email" required/></label><label>Preferred contact<select name="preferred_contact"><option>Phone</option><option>SMS</option><option>Email</option></select></label><label><input type="checkbox" required name="consent"/> Your details are only used to respond to your job request.</label><button type="button" class="btn btn-ghost prev">Back</button> <button class="btn btn-primary" type="submit">Send Job Request</button></div>
+</form></div></div></section>
+<script is:inline>
+const steps=[...document.querySelectorAll('.step')];let i=0;window.wbgTrack&&window.wbgTrack('form_start');
+const set=()=>{steps.forEach((s,n)=>s.classList.toggle('active',n===i));document.getElementById('bar').style.width=`${(i+1)/steps.length*100}%`;};
+document.querySelectorAll('.next').forEach(b=>b.onclick=()=>{window.wbgTrack&&window.wbgTrack('form_step_complete',{step:i+1});i=Math.min(i+1,steps.length-1);set();});
+document.querySelectorAll('.prev').forEach(b=>b.onclick=()=>{i=Math.max(i-1,0);set();});
+</script>
+</BaseLayout>

@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { suburbs } from '../../data/site';
+---
+<BaseLayout title="Gardening and Landscaping Services Southern Adelaide | Wooden Bone Garden and Landscape" description="Local service areas across southern Adelaide."><section class="section"><div class="container"><h1>Service Areas</h1><p>Based in Bellevue Heights and servicing southern and inner-southern Adelaide suburbs.</p><ul>{suburbs.map(s=><li><a href={`/service-areas/${s.toLowerCase().replace(/\s+/g,'-')}`}>{s}</a></li>)}</ul></div></section></BaseLayout>
