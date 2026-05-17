@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const items=[['Cleanup','Bellevue Heights'],['Lawn','Blackwood'],['Pre-sale tidy','Belair']];
+---
+<BaseLayout title="Garden Before and After Adelaide | Wooden Bone Garden and Landscape" description="Before and after garden transformations across southern Adelaide."><section class="section"><div class="container"><h1>Before and After Gallery</h1><p>Small changes. Big difference.</p><div class="cards">{items.map(i=><article class="card"><p><strong>{i[1]}</strong> · {i[0]}</p><p class="badge">Before</p><img loading="lazy" src="/images/gallery/placeholder.svg" alt="Before placeholder"/><p class="badge">After</p><img loading="lazy" src="/images/gallery/placeholder.svg" alt="After placeholder"/><p class="small">Placeholder images — replace with real project photos.</p><a data-track="gallery_cta_click" href="/request-job">Request a similar job</a></article>)}</div></div></section></BaseLayout>

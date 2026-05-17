@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const trustChips = [
+  'Local Bellevue Heights Operator',
+  'Direct With John',
+  'Small Jobs Welcome',
+  'Fair, Practical Pricing'
+];
+
+const services = [
+  { title: 'Garden Tidy-Ups', copy: 'Overgrown yards reset into clean, manageable spaces with clear practical outcomes.', image: '/images/home/service-tidy.svg' },
+  { title: 'Small Garden Makeovers', copy: 'Mulch, planting and bed refreshes that lift street appeal without overcomplicating the job.', image: '/images/home/project-2.svg' },
+  { title: 'Garden Maintenance', copy: 'Reliable ongoing care to keep things under control through every season.', image: '/images/home/service-lawn.svg' },
+  { title: 'Lawn, Edges & Turf', copy: 'Sharper edges and stronger lawn presentation for a cleaner first impression.', image: '/images/home/project-1.svg' },
+  { title: 'Irrigation & Summer Prep', copy: 'Practical irrigation fixes and prep work before Adelaide heat sets in.', image: '/images/home/service-planting.svg' },
+  { title: 'Pre-Sale Garden Polish', copy: 'Presentation-focused tidy-ups for inspections, listing photos and handovers.', image: '/images/home/hero-garden.svg' }
+];
+---
+
+<BaseLayout title="Wooden Bone Garden and Landscape | Request a Garden Quote" description="Garden tidy-ups, small makeovers and maintenance across Adelaide's southern suburbs. Fair, practical and direct with John.">
+  <section class="hero-photo-real">
+    <img src="/images/home/hero-garden.svg" alt="Tidy suburban garden with fresh mulch, lawn edge and practical landscaping" />
+    <div class="hero-layer"></div>
+    <div class="container hero-panel-wrap hero-centered">
+      <article class="hero-panel">
+        <p class="hero-kicker">Wooden Bone Garden & Landscape</p>
+        <h1>Bring the garden back.</h1>
+        <p>Garden tidy-ups, small makeovers and regular maintenance for Adelaide homes that need practical help without the runaround.</p>
+        <p class="hero-support">Garden work with backbone.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/request-job">Request a Quote</a>
+          <a class="btn btn-rust" href="/request-job" data-track="sms_click">Send Photos</a>
+        </div>
+        <div class="chip-row">{trustChips.map((chip) => <span class="chip">{chip}</span>)}</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <h2>Practical services for Adelaide gardens</h2>
+      <div class="cards svc">
+        {services.map((service) => (
+          <article class="svc-card">
+            <img src={service.image} alt={service.title} loading="lazy" />
+            <div>
+              <h3>{service.title}</h3>
+              <p>{service.copy}</p>
+              <a href="/request-job" data-track="service_page_cta_click">Request a quote →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>See the difference a proper tidy-up makes.</h2>
+      <div class="before-after-grid">
+        <article class="ba-card">
+          <img src="/images/home/project-1.svg" alt="Before: overgrown side area with rough edges" loading="lazy" />
+          <img src="/images/home/project-2.svg" alt="After: cleaned garden with refreshed mulch and planting" loading="lazy" />
+          <div><h3>From overgrown to under control</h3><a href="/request-job">Request a similar job →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container about-preview">
+      <div>
+        <h2>Direct with John, not a franchise.</h2>
+        <p>When you contact Wooden Bone, you’re dealing with the person doing the work. Practical advice, fair pricing and clear communication.</p>
+        <div class="chip-row about-chips"><span class="chip">Local southern suburbs</span><span class="chip">Small jobs welcome</span><span class="chip">Clear communication</span></div>
+        <a class="btn btn-primary" href="/about-john">Ask John about your garden</a>
+      </div>
+      <div class="about-images">
+        <img src="/images/home/john.svg" alt="Local operator in residential garden setting" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container quote-cta final-cta">
+      <h2>Ready to get the garden back under control?</h2>
+      <p>Send a few photos and John can help map out the best next step for your place.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/request-job">Request a Quote</a>
+        <a class="btn btn-rust" href="/request-job" data-track="sms_click">Send Photos</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

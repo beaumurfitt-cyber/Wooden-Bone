@@ -1,0 +1,8 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'>
+<defs><linearGradient id='s' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='#f3d7a8'/><stop offset='35%' stop-color='#9db99c'/><stop offset='100%' stop-color='#486b53'/></linearGradient></defs>
+<rect width='1600' height='900' fill='url(#s)'/>
+<ellipse cx='300' cy='820' rx='420' ry='180' fill='#3f624b'/><ellipse cx='980' cy='820' rx='560' ry='210' fill='#54775b'/>
+<rect x='760' y='510' width='560' height='280' fill='#6f8f6f'/><rect x='760' y='510' width='560' height='40' fill='#8ca67f'/>
+<path d='M0 690 Q500 610 950 720 T1600 700' stroke='#d8c8a2' stroke-width='24' fill='none'/>
+<circle cx='1270' cy='220' r='110' fill='#f8e5bf' opacity='.35'/>
+</svg>
